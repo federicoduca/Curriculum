@@ -133,7 +133,6 @@
 \newcommand{\twittersymbol}{\faTwitter}
 \newcommand{\githubsymbol}{\faGithubSquare}
 \newcommand{\orcidsymbol}{\aiOrcid}
-% \newcommand{\mailsymbol}{\faEnvelope}
 
 \newcommand{\printinfo}[2]{\mbox{\textcolor{icons}{\normalfont #1}\hspace{0.5em}#2\hspace{1.2em}}}
 
@@ -141,13 +140,10 @@
 \newcommand{\tagline}[1]{\def\@tagline{#1}}
 \newcommand{\photo}[2]{\def\@photo{#2}\def\@photodiameter{#1}}
 \newcommand{\email}[1]{\printinfo{\emailsymbol}{#1}}
-% \newcommand{\mailaddress}[1]{\printinfo{\mailsymbol}{#1}}
 \newcommand{\phone}[1]{\printinfo{\phonesymbol}{#1}}
 \newcommand{\location}[1]{\printinfo{\locationsymbol}{#1}}
 \newcommand{\homepage}[1]{\printinfo{\homepagesymbol}{#1}}
-% \newcommand{\linkedin}[1]{\printinfo{\linkedinsymbol}{#1}}
 \newcommand{\linkedin}[1]{\printinfo{\linkedinsymbol}{\href{https://www.linkedin.com/in/#1}{#1}}}
-% \newcommand{\github}[1]{\printinfo{\githubsymbol}{#1}}
 \newcommand{\github}[1]{\printinfo{\githubsymbol}{\href{https://#1}{#1}}}
 \newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
 
@@ -286,6 +282,19 @@
 }
 
 \newenvironment{cvcolumn}[1]{\begin{minipage}[t]{#1}\raggedright}{\end{minipage}}
+
+\newcommand{\cvcolorblock}[4]{
+	\begin{tikzpicture}[remember picture,overlay] 
+		\node [shading = axis, 
+			rectangle, 
+			left color=#1, 
+			right color=#2,
+			shading angle=135, 
+			minimum width=\paperwidth, 
+			minimum height=#4,
+			anchor=#3] (box) at (current page.#3){};
+	\end{tikzpicture}
+}
 
 \RequirePackage[backend=biber,style=authoryear,sorting=ydnt]{biblatex}
 %% For removing numbering entirely when using a numeric style

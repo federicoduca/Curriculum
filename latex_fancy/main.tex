@@ -36,8 +36,6 @@
 
 \usepackage[english,spanish]{babel}
 \usepackage{csquotes} %%% https://tex.stackexchange.com/questions/229638/package-biblatex-warning-babel-polyglossia-detected-but-csquotes-missing
-\usepackage{ragged2e}
-
 
 % Seteo de colores del CV
 \input{colores.tex}
@@ -50,64 +48,46 @@
 % seteo fondo
 \usepackage{background}
 \backgroundsetup{
-    scale=1,
-    color=black,
-    opacity=1,
-    angle=0,
-    position=current page.north west,
-    contents={%
-    \begin{tikzpicture}[remember picture,overlay] 
-        \node [shading = axis, rectangle, left color=headerbg, right color=headerbg, shading angle=135, anchor=north, minimum width=\paperwidth, minimum height=2.6cm] (box) at (current page.north){};
-    \end{tikzpicture}
-    }%
+scale=1,
+color=black,
+opacity=1,
+angle=0,
+position=current page.north west,
+contents={\cvcolorblock{headerbg}{headerbg}{north}{2.6cm}}
 }
 
 \begin{document}
 
-    \name{Federico Duca}
-    % \tagline{}
-    \photo{2.8cm}{f_foto2}
-    \personalinfo{
-        % \phone{11-6876-9884}
-        \email{f.duca.a@gmail.com}
-    %   \location{CABA, Argentina}
-        \linkedin{federicoduca}
-        % \phone
-        % \location
-        \github{federicoduca.github.io}
-        % \linkedin
-        % \github
-        % \orcid
-        % \twitter
-    }
+\name{Federico Duca}
+% \tagline{}
+\photo{2.8cm}{f_foto2}
+\personalinfo{
+\email{f.duca.a@gmail.com}
+\linkedin{federicoduca}
+\github{federicoduca.github.io}
+}
 
-    \makecvheader
-    
-    \vspace{-5ex}
-    \columnratio{0.65}
-    \setlength{\columnsep}{2em}
-    \begin{paracol}{2}
-        \input{s_experiencia.tex}
-        \input{s_educacion.tex}
-        \switchcolumn
-        \vspace{3ex}
-        \input{s_habilidades.tex}
-        \vspace{2ex}
-        \input{s_cursos.tex}
-        \vspace{2ex}
-        \input{s_logros.tex}
-        \vfill
-        {\small \itshape \raggedleft Actualización: \today\par}
-        
-    \end{paracol}
-    
-    \begin{tikzpicture}[remember picture,overlay] 
-        \node [shading = axis, rectangle, left color=headerbg, right color=headerbg,shading angle=135, anchor=south, minimum width=\paperwidth, minimum height=.3cm] (box) at (current page.south){};
-    \end{tikzpicture}
-    
-    % \begin{tikzpicture}[remember picture,overlay] 
-    %     \node [shading = axis, rectangle, left color=utdt-rosa, right color=utdt-rosa,shading angle=135, anchor=south west, minimum width=.33\paperwidth, minimum height=.3cm] (box) at (current page.south west){};
-    %     \node [shading = axis, rectangle, left color=utdt-verde, right color=utdt-verde,shading angle=135, anchor=south, minimum width=.34\paperwidth, minimum height=.3cm] (box) at (current page.south){};
-    %     \node [shading = axis, rectangle, left color=utdt-amarillo, right color=utdt-amarillo,shading angle=135, anchor=south east, minimum width=.33\paperwidth, minimum height=.3cm] (box) at (current page.south east){}; height=0cm] (box) at (current page.south east){};
-    % \end{tikzpicture}
+\makecvheader
+
+\vspace{-5ex}
+
+\columnratio{0.65}
+\setlength{\columnsep}{2em}
+\begin{paracol}{2}
+\input{secciones/es_experiencia.tex}
+\input{secciones/es_educacion.tex}
+\switchcolumn
+\vspace{3ex}
+\input{secciones/es_habilidades.tex}
+\vspace{2ex}
+\input{secciones/es_cursos.tex}
+\vspace{2ex}
+\input{secciones/es_logros.tex}
+\vfill
+{\small \itshape \raggedleft Actualización: \today\par}
+
+\end{paracol}
+
+\cvcolorblock{headerbg}{headerbg}{south}{0.3cm}
+
 \end{document}
