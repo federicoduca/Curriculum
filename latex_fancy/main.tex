@@ -29,23 +29,21 @@
   \setmainfont{Lato}
 \else
   % If using pdflatex:
-  \usepackage[utf8]{inputenc}
-  \usepackage[T1]{fontenc}
   \usepackage[default]{lato}
 \fi
 
 \usepackage[english,spanish]{babel}
 \usepackage{csquotes} %%% https://tex.stackexchange.com/questions/229638/package-biblatex-warning-babel-polyglossia-detected-but-csquotes-missing
 
-% Seteo de colores del CV
-\input{colores.tex}
+% Set de colores del CV
+\input{colors.tex}
 
 % Change the bullets for itemize and rating marker
 % for \cvskill if you want to
 \renewcommand{\itemmarker}{{\small\textbullet}}
 \renewcommand{\ratingmarker}{\faCircle}
 
-% seteo fondo
+% fondo
 \usepackage{background}
 \backgroundsetup{
 scale=1,
@@ -60,11 +58,11 @@ contents={\cvcolorblock{headerbg}{headerbg}{north}{2.6cm}}
 
 \name{Federico Duca}
 % \tagline{}
-\photo{2.8cm}{f_foto2}
+\photo{2.8cm}{../photos/f_foto2}
 \personalinfo{
-\email{f.duca.a@gmail.com}
-\linkedin{federicoduca}
-\github{federicoduca.github.io}
+  \email{f.duca.a@gmail.com}
+  \linkedin{federicoduca}
+  \github{federicoduca.github.io}
 }
 
 \makecvheader
@@ -74,17 +72,17 @@ contents={\cvcolorblock{headerbg}{headerbg}{north}{2.6cm}}
 \columnratio{0.65}
 \setlength{\columnsep}{2em}
 \begin{paracol}{2}
-\input{secciones/es_experiencia.tex}
-\input{secciones/es_educacion.tex}
-\switchcolumn
-\vspace{3ex}
-\input{secciones/es_habilidades.tex}
-\vspace{2ex}
-\input{secciones/es_cursos.tex}
-\vspace{2ex}
-\input{secciones/es_logros.tex}
-\vfill
-{\small \itshape \raggedleft Actualización: \today\par}
+  \input{sections/es_experiencia.tex}
+  \input{sections/es_educacion.tex}
+  \switchcolumn
+  \vspace{3ex}
+  \input{sections/es_habilidades.tex}
+  \vspace{2ex}
+  \input{sections/es_cursos.tex}
+  \vspace{2ex}
+  \input{sections/es_logros.tex}
+  \vfill
+  {\small \itshape \raggedleft Actualización: \today\par}
 
 \end{paracol}
 
