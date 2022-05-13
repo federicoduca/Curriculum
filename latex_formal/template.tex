@@ -1,0 +1,107 @@
+
+\usepackage{ifthen} % Required for statements
+
+%%%%%%%% FORMATO BASE DEL DOCUMENTO
+\usepackage{geometry}        % márgenes del archivo
+\geometry{left=1cm,right=1cm,top=1cm,bottom=1cm,columnsep=1cm}
+
+%%%%%%%% FONTS
+\usepackage[english]{babel} % estructura "inglés"
+% \usepackage{libertine}  % incluye tildes para XeLaTeX
+\usepackage{fontawesome}
+\usepackage[T1]{fontenc}
+
+%%%%%%%% TABLAS
+\usepackage{multirow}	% multiples filas en tablas
+\usepackage{array}		% para configurar tablas
+
+%%%%%%%% PARRAFO
+\setlength{\parindent}{0ex}
+\setlength{\parskip}{.2ex}
+% \renewcommand{\baselinestretch}{1.2}
+
+%%%%%%%% ITEMIZE
+\usepackage{amssymb}
+\newcommand{\entry}{\par {\footnotesize\textbullet \ }}
+\usepackage{enumitem}        % enumerate
+%    \setlist[itemize,1]{label=$\mathbf{\bullet}$}
+%    \setlist[itemize,2]{label=$\mathbf{\circ}$}
+%    \setlist[itemize]{noitemsep, topsep=0pt}
+
+%%%%%%%% HIPERVINCULOS A REFERENCIAS
+% estos paquetes generan conflicto entre si:
+%\usepackage{varioref}
+%\usepackage{cleveref}
+\usepackage{hyperref}
+\hypersetup{
+    pdfauthor={Federico Duca},     % author
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black,
+}
+
+% %% BIBLIOGRAFIA
+% \usepackage[nonamebreak]{natbib}   % bibliografía
+% \bibliographystyle{plain}
+% \setcitestyle{numbers,square,comma}
+% % \usepackage{bibentry}   % insertar bibliografía en otro lugar
+% \usepackage{url}        % permite URL en bib
+% % \urlstyle{same}         % tipografía de la URL
+% % \usepackage{breakurl}
+
+
+%%%%%%%% (SECTION) TITULOS CUSTOMIZADOS
+\usepackage{titlesec}
+\titleformat{\section}
+% [] % shape
+{\Large\bf\scshape} % format in label and text
+{} % label
+{0pt} % separation between label and title
+{} % before title
+[{\titlerule[1pt]}] % after title
+
+\newcommand{\emailsymbol}{\faEnvelope}
+\newcommand{\webpagesymbol}{\faGlobe}
+\newcommand{\linkedinsymbol}{\faLinkedin}
+\newcommand{\githubsymbol}{\faGithub}
+\newcommand{\gitlabsymbol}{\faGitlab}
+
+\newcommand{\printinfo}[2]{\mbox{\normalfont #1}\hspace{0.5em}#2\hspace{1.2em}}
+
+\newcommand{\email}[1]{\printinfo{\emailsymbol}{#1}}
+\newcommand{\webpage}[1]{\printinfo{\webpagesymbol}{\href{https://#1}{#1}}}
+\newcommand{\linkedin}[1]{\printinfo{\linkedinsymbol}{\href{https://www.linkedin.com/in/#1}{#1}}}
+\newcommand{\github}[1]{\printinfo{\githubsymbol}{\href{https://github.com/#1}{#1}}}
+\newcommand{\gitlab}[1]{\printinfo{\gitlabsymbol}{\href{https://gitlab.com/#1}{#1}}}
+
+
+\makeatletter
+\newcommand{\name}[1]{\def\@name{#1}}
+\newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
+
+\newcommand{\makecvheader}{%
+    \begingroup
+    % \centering
+    {\Huge\bfseries\scshape\@name\par}
+    \medskip
+    {\normalsize\@personalinfo\par}
+    \endgroup
+}
+\makeatother
+
+\newcommand{\cvevent}[4]{
+    \smallskip
+    \begin{tabular}{p{2.2cm}|l}
+        {\large #3} & {\large\bf #1} \\
+                    & {\large #2}
+        \ifthenelse{\equal{#4}{}}{}{
+        \\ &
+        \begin{minipage}{\textwidth}
+                \medskip
+                {\slshape #4}
+            \end{minipage}  \\
+        }
+    \end{tabular}
+}

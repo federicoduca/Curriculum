@@ -21,6 +21,8 @@
 
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
+\usepackage{libertine}  % incluye tildes para XeLaTeX
+\usepackage[T1]{fontenc}
 
 % Change the font if you want to, depending on whether
 % you're using pdflatex or xelatex/lualatex
@@ -54,7 +56,6 @@ position=current page.north west,
 contents={\cvcolorblock{headerbg}{headerbg}{north}{2.6cm}}
 }
 
-\begin{document}
 
 \name{Federico Duca}
 % \tagline{}
@@ -64,6 +65,8 @@ contents={\cvcolorblock{headerbg}{headerbg}{north}{2.6cm}}
   \linkedin{federicoduca}
   \github{federicoduca.github.io}
 }
+
+\begin{document}
 
 \makecvheader
 
