@@ -1,12 +1,12 @@
 INFO:  latexindent.pl version 3.17.2, 2022-04-14, a script to indent .tex files
        latexindent.pl lives here: C:/Users/fd/AppData/Local/Programs/MiKTeX/scripts/latexindent/
-       Fri May 13 19:36:46 2022
+       Mon May 16 11:13:20 2022
        Filename: c:/Users/fd/My Drive/Trabajo/Curriculum/latex_formal/sections/__latexindent_temp.tex
 INFO:  Processing switches:
        -y|--yaml: YAML settings specified via command line
        -c|--cruft: cruft directory
-INFO:  Directory for backup files and c:/Users/fd/My Drive/Trabajo/Curriculum/latex_fancy//indent.log:
-       c:/Users/fd/My Drive/Trabajo/Curriculum/latex_fancy/
+INFO:  Directory for backup files and c:/Users/fd/My Drive/Trabajo/Curriculum/latex_formal//indent.log:
+       c:/Users/fd/My Drive/Trabajo/Curriculum/latex_formal/
 INFO:  Perl modules are being loaded from the following directories:
        C:/Strawberry/perl/lib/FindBin.pm
        C:/Strawberry/perl/vendor/lib/YAML/Tiny.pm
